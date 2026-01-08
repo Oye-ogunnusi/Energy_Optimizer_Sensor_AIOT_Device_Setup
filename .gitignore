@@ -1,75 +1,383 @@
+# Energy Optimizer Sensor AIoT Device Setup - .gitignore
+# Comprehensive ignore rules for ESP32/Arduino and Python/ML development
 
----
+# ============================================================================
+# Arduino / ESP32 Specific
+# ============================================================================
 
-## 🚫 `.gitignore`
-
-```gitignore
-# =========================
-# Python
-# =========================
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
-.venv
-venv/
-ENV/
-
-# =========================
-# Jupyter Notebook
-# =========================
-.ipynb_checkpoints/
-
-# =========================
-# Arduino / ESP
-# =========================
-*.elf
+# Build artifacts
+build/
 *.bin
+*.elf
 *.hex
 *.map
+
+# Arduino IDE
+.DS_Store
+*/.DS_Store
+**/.DS_Store
+.idea/
+*.iml
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.arduino15/
 .build/
+
+# PlatformIO
 .pio/
 .pioenvs/
 .piolibdeps/
+lib/
+piolibs/
 
-# =========================
-# IDE / Editor
-# =========================
-.vscode/
+# ESP-IDF
+build/
+sdkconfig
+sdkconfig.old
+*.pyc
+
+# ============================================================================
+# Python / Jupyter / Machine Learning
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.virtualenv/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# PyCharm
 .idea/
+*.iml
+*.iws
+.idea_modules/
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ============================================================================
+# Machine Learning Models & Data
+# ============================================================================
+
+# Large datasets (keep small training data, ignore large files)
+*.csv.gz
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Model checkpoints and weights
+checkpoints/
+*.ckpt
+*.pth
+*.weights
+*.h5
+*.hdf5
+saved_models/
+models/checkpoints/
+
+# TensorBoard logs
+logs/
+tensorboard/
+runs/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Weights & Biases
+wandb/
+
+# ============================================================================
+# IDE & Editor Specific
+# ============================================================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
 *.swp
 *.swo
+*~
+.*.sw[a-z]
+*.un~
+Session.vim
 
-# =========================
-# OS
-# =========================
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ============================================================================
+# Operating System Files
+# ============================================================================
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
 
-# =========================
-# Logs & Temporary Files
-# =========================
-*.log
-*.tmp
-*.bak
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
 
-# =========================
-# Model & Data Artifacts
-# =========================
-*.h5
-*.onnx
-*.tflite
-model_checkpoints/
-trained_models/
+# ============================================================================
+# Project Specific
+# ============================================================================
 
-# =========================
-# Simulation / Wokwi
-# =========================
-wokwi-cache/
-
-# =========================
-# Secrets
-# =========================
+# Credentials and secrets (NEVER commit these!)
 secrets.h
+credentials.h
 config.h
+*.key
+*.pem
+*.crt
+api_keys.txt
+passwords.txt
+.env
+.env.local
+.env.*.local
+
+# ThingSpeak / IoT credentials
+thingspeak_config.h
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Cache directories
+.cache/
+cache/
+__pycache__/
+
+# Documentation build artifacts
+docs/_build/
+docs/.doctrees/
+site/
+
+# ============================================================================
+# Hardware & Simulation
+# ============================================================================
+
+# Wokwi (keep main files, ignore local configs)
+wokwi.local.json
+
+# KiCad (if PCB design added)
+*.kicad_pcb-bak
+*-cache.lib
+*.bck
+*.bak
+fp-info-cache
+*.net
+*.dsn
+*.ses
+*.zip
+
+# Fritzing
+*.fzz.bak
+
+# ============================================================================
+# Testing & Coverage
+# ============================================================================
+
+# pytest
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Unit test / coverage reports
+coverage/
+*.cover
+.hypothesis/
+
+# ============================================================================
+# Miscellaneous
+# ============================================================================
+
+# Compressed files (unless part of project deliverables)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Image thumbnails
+*.thumb
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archives (keep if part of releases)
+# *.zip
+# *.tar.gz
+
+# Version control
+.svn/
+.git/
+*.orig
+
+# Package manager locks (keep these for reproducibility)
+# Uncomment if you want to ignore lock files:
+# package-lock.json
+# yarn.lock
+# Pipfile.lock
+
+# ============================================================================
+# KEEP These Files (exceptions to ignore rules)
+# ============================================================================
+
+# Keep small training datasets
+!datatraining.csv
+
+# Keep exported models
+!occupancy_model.h
+
+# Keep configuration templates
+!config.example.h
+
+# Keep documentation
+!README.md
+!LICENSE
+
+# Keep requirements
+!requirements.txt
+
+# Keep circuit diagrams
+!diagram_1.json
+!*.json
+
+# Keep Arduino sketch
+!*.ino
+
+# Keep Wokwi project files
+!wokwi-project.txt

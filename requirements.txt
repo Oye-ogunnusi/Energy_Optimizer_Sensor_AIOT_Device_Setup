@@ -1,0 +1,28 @@
+# Energy Optimizer Sensor AIoT Device Setup
+# Python Dependencies for Model Training and Analysis
+
+# Core Data Science Libraries
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Machine Learning
+scikit-learn>=1.2.0
+imbalanced-learn>=0.10.0
+
+# Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Jupyter Notebook (if running locally)
+jupyter>=1.0.0
+notebook>=6.5.0
+ipykernel>=6.16.0
+
+# Optional: For enhanced model export and analysis
+# joblib>=1.2.0
+# scipy>=1.9.0
+
+# Development and Testing (optional)
+# pytest>=7.2.0
+# black>=22.10.0
+# flake8>=5.0.0
