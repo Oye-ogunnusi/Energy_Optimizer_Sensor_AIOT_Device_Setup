@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "author": "Englitchman",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_humidity",
+      "top": -38.4,
+      "left": -153.6,
+      "attrs": {
+        "label": "Humidity"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_light",
+      "top": 86.4,
+      "left": -153.6,
+      "attrs": {
+        "label": "Light"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_co2",
+      "top": 211.2,
+      "left": -153.6,
+      "attrs": {
+        "label": "CO2"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fan",
+      "top": -48,
+      "left": 230.4,
+      "attrs": {
+        "color": "blue",
+        "label": "FAN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_fan",
+      "top": 9.6,
+      "left": 220.8,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_heater",
+      "top": 124.8,
+      "left": 230.4,
+      "attrs": {
+        "color": "red",
+        "label": "HEATER"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_heater",
+      "top": 182.4,
+      "left": 220.8,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "pot_humidity:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pot_humidity:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pot_humidity:SIG",
+      "esp:32",
+      "green",
+      [
+        "v0",
+        "h28.8"
+      ]
+    ],
+    [
+      "pot_light:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pot_light:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pot_light:SIG",
+      "esp:34",
+      "green",
+      [
+        "v0",
+        "h28.8"
+      ]
+    ],
+    [
+      "pot_co2:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pot_co2:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pot_co2:SIG",
+      "esp:35",
+      "green",
+      [
+        "v0",
+        "h28.8"
+      ]
+    ],
+    [
+      "esp:D2",
+      "led_fan:A",
+      "blue",
+      [
+        "v0",
+        "h96"
+      ]
+    ],
+    [
+      "led_fan:C",
+      "r_fan:1",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r_fan:2",
+      "esp:GND.2",
+      "black",
+      [
+        "v0",
+        "h-76.8"
+      ]
+    ],
+    [
+      "esp:D4",
+      "led_heater:A",
+      "red",
+      [
+        "v0",
+        "h96"
+      ]
+    ],
+    [
+      "led_heater:C",
+      "r_heater:1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r_heater:2",
+      "esp:GND.2",
+      "black",
+      [
+        "v0",
+        "h-76.8"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

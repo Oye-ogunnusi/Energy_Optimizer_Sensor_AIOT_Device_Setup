@@ -1,0 +1,75 @@
+
+---
+
+## 🚫 `.gitignore`
+
+```gitignore
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+ENV/
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Arduino / ESP
+# =========================
+*.elf
+*.bin
+*.hex
+*.map
+.build/
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs & Temporary Files
+# =========================
+*.log
+*.tmp
+*.bak
+
+# =========================
+# Model & Data Artifacts
+# =========================
+*.h5
+*.onnx
+*.tflite
+model_checkpoints/
+trained_models/
+
+# =========================
+# Simulation / Wokwi
+# =========================
+wokwi-cache/
+
+# =========================
+# Secrets
+# =========================
+secrets.h
+config.h
